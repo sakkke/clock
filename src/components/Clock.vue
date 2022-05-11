@@ -1,3 +1,15 @@
+<script setup lang="ts">
+setInterval(() => {
+  const date = new Date()
+  const hours = date.getHours()
+  const minutes = date.getMinutes()
+  const seconds = date.getSeconds()
+  document.querySelector('.hour-hand-container').style.setProperty('--i', hours)
+  document.querySelector('.minute-hand-container').style.setProperty('--i', minutes)
+  document.querySelector('.second-hand-container').style.setProperty('--i', seconds)
+}, 1000)
+</script>
+
 <template>
   <div class="clock">
     <div class="hour-hand-container">
@@ -31,7 +43,7 @@
   position: absolute;
   width: 1.5rem;
 
-  transform: rotate(0deg);
+  transform: rotate(calc(1deg * 30 * var(--i)));
 }
 
 .minute-hand-container {
@@ -39,7 +51,7 @@
   position: absolute;
   width: 1rem;
 
-  transform: rotate(0deg);
+  transform: rotate(calc(1deg * 6 * var(--i)));
 }
 
 .second-hand-container {
@@ -47,7 +59,7 @@
   position: absolute;
   width: .5rem;
 
-  transform: rotate(0deg);
+  transform: rotate(calc(1deg * 6 * var(--i)));
 }
 
 .hour-hand {
