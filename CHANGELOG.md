@@ -6,12 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.2] - 2022-05-12
+### Added
+- Make clock hands move now.
+
 ## [0.0.1] - 2022-05-11
 ### Added
 - Add npm package `open-props`.
 - Add file `.editorconfig`.
 - Add prototype.
 
-[Unreleased]: https://github.com/sakkke/clock/compare/v0.0.1...HEAD
+[Unreleased]: https://github.com/sakkke/clock/compare/v0.0.2...HEAD
+[0.0.2]: https://github.com/sakkke/clock/compare/v0.0.1...v0.0.2
 [0.0.1]: https://github.com/sakkke/clock/releases/tag/v0.0.1
 
