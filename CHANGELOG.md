@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Fixed
 - Fix the issue that `npm run build` fails.
+- Fix the problem that clock-hands at 12 when startup.
 
 ## [0.0.2] - 2022-05-12
 ### Added
