@@ -1,13 +1,24 @@
 <script setup lang="ts">
-setInterval(() => {
+import { onMounted } from 'vue'
+
+const updateClockHands = () => {
   const date = new Date()
   const hours = date.getHours()
   const minutes = date.getMinutes()
   const seconds = date.getSeconds()
-  document.querySelector('.hour-hand-container').style.setProperty('--i', hours)
-  document.querySelector('.minute-hand-container').style.setProperty('--i', minutes)
-  document.querySelector('.second-hand-container').style.setProperty('--i', seconds)
-}, 1000)
+  ; (document.querySelector('.hour-hand-container') as HTMLElement)
+    .style.setProperty('--i', hours.toString())
+  ; (document.querySelector('.minute-hand-container') as HTMLElement)
+    .style.setProperty('--i', minutes.toString())
+  ; (document.querySelector('.second-hand-container') as HTMLElement)
+    .style.setProperty('--i', seconds.toString())
+}
+
+onMounted(() => {
+  setInterval(() => {
+    updateClockHands()
+  }, 1000)
+})
 </script>
 
 <template>
