@@ -15,6 +15,7 @@ const updateClockHands = () => {
 }
 
 onMounted(() => {
+  updateClockHands()
   setInterval(() => {
     updateClockHands()
   }, 1000)
