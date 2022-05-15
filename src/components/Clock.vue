@@ -104,7 +104,7 @@ onMounted(async () => {
 .minute-hand-container {
   height: 85%;
   position: absolute;
-  width: .5rem;
+  width: 0.5rem;
 
   transform: rotate(calc(1deg * 6 * var(--i)));
   transition-duration: var(--t);
@@ -113,7 +113,7 @@ onMounted(async () => {
 .second-hand-container {
   height: 95%;
   position: absolute;
-  width: .5rem;
+  width: 0.5rem;
 
   transform: rotate(calc(1deg * 6 * var(--i)));
   transition-duration: var(--t);
@@ -147,7 +147,7 @@ onMounted(async () => {
 }
 
 .clock-center-hour {
-  height: 1.5rem;
+  aspect-ratio: var(--ratio-square);
   position: absolute;
   width: 1.5rem;
 
@@ -157,7 +157,7 @@ onMounted(async () => {
 }
 
 .clock-center-minute {
-  height: 1rem;
+  aspect-ratio: var(--ratio-square);
   position: absolute;
   width: 1rem;
 
@@ -167,7 +167,7 @@ onMounted(async () => {
 }
 
 .clock-center-second {
-  height: 2.5rem;
+  aspect-ratio: var(--ratio-square);
   position: absolute;
   width: 2.5rem;
 
@@ -177,7 +177,7 @@ onMounted(async () => {
 }
 
 .clock-center {
-  height: 2rem;
+  aspect-ratio: var(--ratio-square);
   position: absolute;
   width: 2rem;
 
