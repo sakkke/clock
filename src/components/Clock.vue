@@ -422,7 +422,7 @@ onMounted(async () => {
   transition-duration: 0.1s;
 }
 
-.clock-scale-container:nth-child(5n+3) {
+.clock-scale-container:nth-child(5n) {
   height: 100%;
   padding-top: 0.5rem;
   position: absolute;
@@ -436,15 +436,15 @@ onMounted(async () => {
   width: 0.3rem;
 }
 
-.clock-scale-container.now:nth-child(5n+3) {
+.clock-scale-container.now:nth-child(5n) {
   width: 0.5rem;
 }
 
-.clock-scale-container:nth-child(5n+3) .clock-scale {
+.clock-scale-container:nth-child(5n) .clock-scale {
   background-color: var(--grape-2);
 }
 
-.clock-scale-container.now:nth-child(5n+3) .clock-scale {
+.clock-scale-container.now:nth-child(5n) .clock-scale {
   background-color: var(--red-6);
 }
 
@@ -512,11 +512,11 @@ onMounted(async () => {
     background-color: var(--blue-9);
   }
 
-  .clock-scale-container:nth-child(5n+3) .clock-scale {
+  .clock-scale-container:nth-child(5n) .clock-scale {
     background-color: var(--gray-7);
   }
 
-  .clock-scale-container.now:nth-child(5n+3) .clock-scale {
+  .clock-scale-container.now:nth-child(5n) .clock-scale {
     background-color: var(--red-8);
   }
 
