@@ -20,7 +20,7 @@ const updateClockHands = async () => {
     await sleep(1)
     hourHandContainer.style.setProperty('--t', '0.5s')
   } else {
-    hourHandContainer.style.setProperty('--i', (hours + minutes / 60).toString())
+    hourHandContainer.style.setProperty('--i', `${hours + minutes / 60}`)
   }
 
   if (minutes === 0) {
@@ -31,7 +31,7 @@ const updateClockHands = async () => {
     await sleep(1)
     minuteHandContainer.style.setProperty('--t', '0.5s')
   } else {
-    minuteHandContainer.style.setProperty('--i', (minutes + seconds / 60).toString())
+    minuteHandContainer.style.setProperty('--i', `${minutes + seconds / 60}`)
   }
 
   if (seconds === 0) {
@@ -42,21 +42,22 @@ const updateClockHands = async () => {
     await sleep(1)
     secondHandContainer.style.setProperty('--t', '0.5s')
   } else {
-    secondHandContainer.style.setProperty('--i', seconds.toString())
+    secondHandContainer.style.setProperty('--i', `${seconds}`)
   }
 }
 
-onMounted(() => {
+onMounted(async () => {
   const hourHandContainer: HTMLElement = document.querySelector('.hour-hand-container')!
   const minuteHandContainer: HTMLElement = document.querySelector('.minute-hand-container')!
   const secondHandContainer: HTMLElement = document.querySelector('.second-hand-container')!
   hourHandContainer.style.setProperty('--t', '0.5s')
   minuteHandContainer.style.setProperty('--t', '0.5s')
   secondHandContainer.style.setProperty('--t', '0.5s')
-  updateClockHands()
-  setInterval(async () => {
-    await updateClockHands()
-  }, 1000)
+
+  while (true) {
+    updateClockHands()
+    await sleep(1000)
+  }
 })
 </script>
 
