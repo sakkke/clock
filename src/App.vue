@@ -11,6 +11,10 @@ import Clock from './components/Clock.vue'
 @import 'open-props/style';
 @import 'open-props/normalize';
 
+:root {
+  --basic-unit: 5vmin;
+}
+
 body {
   display: grid;
   place-items: center;

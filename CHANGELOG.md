@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add clock scales.
 - Add hour marks.
 - Make clock hands translucent.
+- Make `rem` `vmin`.
 
 ### Changed
 - Change the clock style.

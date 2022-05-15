@@ -313,30 +313,30 @@ onMounted(async () => {
 }
 
 .hour-hand-container {
-  height: calc(75% - 1rem);
-  padding-top: 1rem;
+  height: calc(75% - var(--basic-unit) * 1);
+  padding-top: calc(var(--basic-unit) * 1);
   position: absolute;
-  width: 1rem;
+  width: calc(var(--basic-unit) * 1);
 
   transform: rotate(calc(1deg * 30 * var(--i)));
   transition-duration: var(--t);
 }
 
 .minute-hand-container {
-  height: calc(85% - 1rem);
-  padding-top: 1rem;
+  height: calc(85% - var(--basic-unit) * 1);
+  padding-top: calc(var(--basic-unit) * 1);
   position: absolute;
-  width: 0.5rem;
+  width: calc(var(--basic-unit) * 0.5);
 
   transform: rotate(calc(1deg * 6 * var(--i)));
   transition-duration: var(--t);
 }
 
 .second-hand-container {
-  height: calc(95% - 1rem);
-  padding-top: 1rem;
+  height: calc(95% - var(--basic-unit) * 1);
+  padding-top: calc(var(--basic-unit) * 1);
   position: absolute;
-  width: 0.5rem;
+  width: calc(var(--basic-unit) * 0.5);
 
   transform: rotate(calc(1deg * 6 * var(--i)));
   transition-duration: var(--t);
@@ -375,7 +375,7 @@ onMounted(async () => {
 .clock-center-hour {
   aspect-ratio: var(--ratio-square);
   position: absolute;
-  width: 1.5rem;
+  width: calc(var(--basic-unit) * 1.5);
 
   background-color: var(--green-5);
   border-radius: var(--radius-round);
@@ -385,7 +385,7 @@ onMounted(async () => {
 .clock-center-minute {
   aspect-ratio: var(--ratio-square);
   position: absolute;
-  width: 1rem;
+  width: calc(var(--basic-unit) * 1);
 
   background-color: var(--yellow-5);
   border-radius: var(--radius-round);
@@ -395,7 +395,7 @@ onMounted(async () => {
 .clock-center-second {
   aspect-ratio: var(--ratio-square);
   position: absolute;
-  width: 2.5rem;
+  width: calc(var(--basic-unit) * 2.5);
 
   background-color: var(--red-5);
   border-radius: var(--radius-round);
@@ -405,7 +405,7 @@ onMounted(async () => {
 .clock-center {
   aspect-ratio: var(--ratio-square);
   position: absolute;
-  width: 2rem;
+  width: calc(var(--basic-unit) * 2);
 
   background-color: var(--blue-5);
   border-radius: var(--radius-round);
@@ -414,9 +414,9 @@ onMounted(async () => {
 
 .clock-scale-container {
   height: 100%;
-  padding-top: 0.5rem;
+  padding-top: calc(var(--basic-unit) * 0.5);
   position: absolute;
-  width: 0.2rem;
+  width: calc(var(--basic-unit) * 0.2);
 
   transform: rotate(calc(1deg * 6 * var(--i)));
   transition-duration: 0.1s;
@@ -424,20 +424,20 @@ onMounted(async () => {
 
 .clock-scale-container:nth-child(5n) {
   height: 100%;
-  padding-top: 0.5rem;
+  padding-top: calc(var(--basic-unit) * 0.5);
   position: absolute;
-  width: 0.4rem;
+  width: calc(var(--basic-unit) * 0.4);
 
   transform: rotate(calc(1deg * 6 * var(--i)));
   transition-duration: 0.1s;
 }
 
 .clock-scale-container.now {
-  width: 0.3rem;
+  width: calc(var(--basic-unit) * 0.3);
 }
 
 .clock-scale-container.now:nth-child(5n) {
-  width: 0.5rem;
+  width: calc(var(--basic-unit) * 0.5);
 }
 
 .clock-scale-container:nth-child(5n) .clock-scale {
@@ -464,7 +464,7 @@ onMounted(async () => {
 
 .clock-hour-mark-container {
   height: 100%;
-  padding-top: 1.5rem;
+  padding-top: calc(var(--basic-unit) * 1.5);
   position: absolute;
 
   transform: rotate(calc(1deg * 30 * var(--i)));
@@ -473,7 +473,7 @@ onMounted(async () => {
 .clock-hour-mark {
   color: var(--gray-9);
   font-family: 'Poppins', var(--font-sans);
-  font-size: 1rem;
+  font-size: calc(var(--basic-unit) * 1);
   font-weight: var(--font-weight-7);
   text-shadow: var(--shadow-1);
   transform: rotate(calc(1deg * -30 * var(--i)));
