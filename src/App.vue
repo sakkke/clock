@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import '@fontsource/poppins'
 import Clock from './components/Clock.vue'
 </script>
 

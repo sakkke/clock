@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Make clock hands move smoothly.
 - Add dark theme.
 - Add clock scales.
+- Add hour marks.
 
 ### Changed
 - Change the clock style.

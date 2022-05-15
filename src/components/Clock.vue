@@ -67,6 +67,42 @@ onMounted(async () => {
 
 <template>
   <div class="clock">
+    <div class="clock-hour-mark-container" style="--i: 0;">
+      <div class="clock-hour-mark">12</div>
+    </div>
+    <div class="clock-hour-mark-container" style="--i: 1;">
+      <div class="clock-hour-mark">1</div>
+    </div>
+    <div class="clock-hour-mark-container" style="--i: 2;">
+      <div class="clock-hour-mark">2</div>
+    </div>
+    <div class="clock-hour-mark-container" style="--i: 3;">
+      <div class="clock-hour-mark">3</div>
+    </div>
+    <div class="clock-hour-mark-container" style="--i: 4;">
+      <div class="clock-hour-mark">4</div>
+    </div>
+    <div class="clock-hour-mark-container" style="--i: 5;">
+      <div class="clock-hour-mark">5</div>
+    </div>
+    <div class="clock-hour-mark-container" style="--i: 6;">
+      <div class="clock-hour-mark">6</div>
+    </div>
+    <div class="clock-hour-mark-container" style="--i: 7;">
+      <div class="clock-hour-mark">7</div>
+    </div>
+    <div class="clock-hour-mark-container" style="--i: 8;">
+      <div class="clock-hour-mark">8</div>
+    </div>
+    <div class="clock-hour-mark-container" style="--i: 9;">
+      <div class="clock-hour-mark">9</div>
+    </div>
+    <div class="clock-hour-mark-container" style="--i: 10;">
+      <div class="clock-hour-mark">10</div>
+    </div>
+    <div class="clock-hour-mark-container" style="--i: 11;">
+      <div class="clock-hour-mark">11</div>
+    </div>
     <div class="second-hand-container">
       <div class="second-hand"></div>
     </div>
@@ -423,6 +459,23 @@ onMounted(async () => {
   background-color: var(--red-5);
 }
 
+.clock-hour-mark-container {
+  height: 100%;
+  padding-top: 1.5rem;
+  position: absolute;
+
+  transform: rotate(calc(1deg * 30 * var(--i)));
+}
+
+.clock-hour-mark {
+  color: var(--gray-9);
+  font-family: 'Poppins', var(--font-sans);
+  font-size: 1rem;
+  font-weight: var(--font-weight-7);
+  text-shadow: var(--shadow-1);
+  transform: rotate(calc(1deg * -30 * var(--i)));
+}
+
 @media (prefers-color-scheme: dark) {
   .clock {
     background-color: var(--gray-9);
@@ -470,6 +523,10 @@ onMounted(async () => {
 
   .now .clock-scale {
     background-color: var(--red-9);
+  }
+
+  .clock-hour-mark {
+    color: var(--gray-0);
   }
 }
 </style>
