@@ -16,5 +16,11 @@ body {
 
   background-image: var(--gradient-29);
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-image: var(--gradient-23);
+  }
+}
 </style>
 

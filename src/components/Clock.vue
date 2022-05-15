@@ -185,5 +185,39 @@ onMounted(async () => {
   border-radius: var(--radius-round);
   box-shadow: var(--shadow-2);
 }
+
+@media (prefers-color-scheme: dark) {
+  .clock {
+    background-color: var(--gray-9);
+  }
+
+  .hour-hand {
+    background-color: var(--green-9);
+  }
+
+  .minute-hand {
+    background-color: var(--yellow-9);
+  }
+
+  .second-hand {
+    background-color: var(--red-9);
+  }
+
+  .clock-center-hour {
+    background-color: var(--green-9);
+  }
+
+  .clock-center-minute {
+    background-color: var(--yellow-9);
+  }
+
+  .clock-center-second {
+    background-color: var(--red-9);
+  }
+
+  .clock-center {
+    background-color: var(--blue-9);
+  }
+}
 </style>
 
