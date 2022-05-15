@@ -1,23 +1,61 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 
-const updateClockHands = () => {
+const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
+
+const updateClockHands = async () => {
   const date = new Date()
   const hours = date.getHours()
   const minutes = date.getMinutes()
   const seconds = date.getSeconds()
-  ; (document.querySelector('.hour-hand-container') as HTMLElement)
-    .style.setProperty('--i', hours.toString())
-  ; (document.querySelector('.minute-hand-container') as HTMLElement)
-    .style.setProperty('--i', minutes.toString())
-  ; (document.querySelector('.second-hand-container') as HTMLElement)
-    .style.setProperty('--i', seconds.toString())
+  const hourHandContainer: HTMLElement = document.querySelector('.hour-hand-container')!
+  const minuteHandContainer: HTMLElement = document.querySelector('.minute-hand-container')!
+  const secondHandContainer: HTMLElement = document.querySelector('.second-hand-container')!
+
+  if (hours === 0) {
+    hourHandContainer.style.setProperty('--i', '60')
+    await sleep(600)
+    hourHandContainer.style.setProperty('--t', '0s')
+    hourHandContainer.style.setProperty('--i', '0')
+    await sleep(1)
+    hourHandContainer.style.setProperty('--t', '0.5s')
+  } else {
+    hourHandContainer.style.setProperty('--i', (hours + minutes / 60).toString())
+  }
+
+  if (minutes === 0) {
+    minuteHandContainer.style.setProperty('--i', '60')
+    await sleep(600)
+    minuteHandContainer.style.setProperty('--t', '0s')
+    minuteHandContainer.style.setProperty('--i', '0')
+    await sleep(1)
+    minuteHandContainer.style.setProperty('--t', '0.5s')
+  } else {
+    minuteHandContainer.style.setProperty('--i', (minutes + seconds / 60).toString())
+  }
+
+  if (seconds === 0) {
+    secondHandContainer.style.setProperty('--i', '60')
+    await sleep(600)
+    secondHandContainer.style.setProperty('--t', '0s')
+    secondHandContainer.style.setProperty('--i', '0')
+    await sleep(1)
+    secondHandContainer.style.setProperty('--t', '0.5s')
+  } else {
+    secondHandContainer.style.setProperty('--i', seconds.toString())
+  }
 }
 
 onMounted(() => {
+  const hourHandContainer: HTMLElement = document.querySelector('.hour-hand-container')!
+  const minuteHandContainer: HTMLElement = document.querySelector('.minute-hand-container')!
+  const secondHandContainer: HTMLElement = document.querySelector('.second-hand-container')!
+  hourHandContainer.style.setProperty('--t', '0.5s')
+  minuteHandContainer.style.setProperty('--t', '0.5s')
+  secondHandContainer.style.setProperty('--t', '0.5s')
   updateClockHands()
-  setInterval(() => {
-    updateClockHands()
+  setInterval(async () => {
+    await updateClockHands()
   }, 1000)
 })
 </script>
@@ -56,6 +94,7 @@ onMounted(() => {
   width: 1.5rem;
 
   transform: rotate(calc(1deg * 30 * var(--i)));
+  transition-duration: var(--t);
 }
 
 .minute-hand-container {
@@ -64,6 +103,7 @@ onMounted(() => {
   width: 1rem;
 
   transform: rotate(calc(1deg * 6 * var(--i)));
+  transition-duration: var(--t);
 }
 
 .second-hand-container {
@@ -72,6 +112,7 @@ onMounted(() => {
   width: .5rem;
 
   transform: rotate(calc(1deg * 6 * var(--i)));
+  transition-duration: var(--t);
 }
 
 .hour-hand {
