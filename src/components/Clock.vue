@@ -374,7 +374,8 @@ onMounted(async () => {
 }
 
 .clock-scale-container {
-  height: 95%;
+  height: 100%;
+  padding-top: 0.5rem;
   position: absolute;
   width: 0.2rem;
 
@@ -383,7 +384,8 @@ onMounted(async () => {
 }
 
 .clock-scale-container:nth-child(5n+3) {
-  height: 95%;
+  height: 100%;
+  padding-top: 0.5rem;
   position: absolute;
   width: 0.4rem;
 
