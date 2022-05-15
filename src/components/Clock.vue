@@ -349,6 +349,7 @@ onMounted(async () => {
   background-color: var(--green-5);
   border-radius: var(--radius-round);
   box-shadow: var(--shadow-3);
+  opacity: 0.75;
 }
 
 .minute-hand {
@@ -358,6 +359,7 @@ onMounted(async () => {
   background-color: var(--yellow-5);
   border-radius: var(--radius-round);
   box-shadow: var(--shadow-4);
+  opacity: 0.75;
 }
 
 .second-hand {
@@ -367,6 +369,7 @@ onMounted(async () => {
   background-color: var(--red-5);
   border-radius: var(--radius-round);
   box-shadow: var(--shadow-1);
+  opacity: 0.75;
 }
 
 .clock-center-hour {
