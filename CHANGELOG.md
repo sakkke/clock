@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Make clock hands move smoothly.
 
+### Changed
+- Change the clock style.
+
 ## [0.0.3] - 2022-05-13
 ### Fixed
 - Fix the issue that `npm run build` fails.

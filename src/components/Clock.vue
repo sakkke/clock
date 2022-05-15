@@ -63,16 +63,19 @@ onMounted(async () => {
 
 <template>
   <div class="clock">
-    <div class="hour-hand-container">
-      <div class="hour-hand"></div>
-    </div>
-    <div class="minute-hand-container">
-      <div class="minute-hand"></div>
-    </div>
     <div class="second-hand-container">
       <div class="second-hand"></div>
     </div>
+    <div class="clock-center-second"></div>
     <div class="clock-center"></div>
+    <div class="hour-hand-container">
+      <div class="hour-hand"></div>
+    </div>
+    <div class="clock-center-hour"></div>
+    <div class="minute-hand-container">
+      <div class="minute-hand"></div>
+    </div>
+    <div class="clock-center-minute"></div>
   </div>
 </template>
 
@@ -82,7 +85,7 @@ onMounted(async () => {
   display: grid;
   place-items: center;
   position: relative;
-  width: 256px;
+  width: 75vmin;
 
   background-color: var(--grape-0);
   border-radius: var(--radius-round);
@@ -92,7 +95,7 @@ onMounted(async () => {
 .hour-hand-container {
   height: 75%;
   position: absolute;
-  width: 1.5rem;
+  width: 1rem;
 
   transform: rotate(calc(1deg * 30 * var(--i)));
   transition-duration: var(--t);
@@ -101,7 +104,7 @@ onMounted(async () => {
 .minute-hand-container {
   height: 85%;
   position: absolute;
-  width: 1rem;
+  width: .5rem;
 
   transform: rotate(calc(1deg * 6 * var(--i)));
   transition-duration: var(--t);
@@ -122,7 +125,7 @@ onMounted(async () => {
 
   background-color: var(--green-5);
   border-radius: var(--radius-round);
-  box-shadow: var(--shadow-1);
+  box-shadow: var(--shadow-3);
 }
 
 .minute-hand {
@@ -131,12 +134,42 @@ onMounted(async () => {
 
   background-color: var(--yellow-5);
   border-radius: var(--radius-round);
-  box-shadow: var(--shadow-1);
+  box-shadow: var(--shadow-4);
 }
 
 .second-hand {
-  height: 50%;
+  height: 70%;
   width: inherit;
+
+  background-color: var(--red-5);
+  border-radius: var(--radius-round);
+  box-shadow: var(--shadow-1);
+}
+
+.clock-center-hour {
+  height: 1.5rem;
+  position: absolute;
+  width: 1.5rem;
+
+  background-color: var(--green-5);
+  border-radius: var(--radius-round);
+  box-shadow: var(--shadow-3);
+}
+
+.clock-center-minute {
+  height: 1rem;
+  position: absolute;
+  width: 1rem;
+
+  background-color: var(--yellow-5);
+  border-radius: var(--radius-round);
+  box-shadow: var(--shadow-4);
+}
+
+.clock-center-second {
+  height: 2.5rem;
+  position: absolute;
+  width: 2.5rem;
 
   background-color: var(--red-5);
   border-radius: var(--radius-round);
