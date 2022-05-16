@@ -5,6 +5,10 @@ const hours = ref(0)
 const minutes = ref(0)
 const seconds = ref(0)
 
+const cssForceReflow = (element: HTMLElement) => {
+  element.offsetHeight
+}
+
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 
 const updateClockHands = async () => {
@@ -21,7 +25,7 @@ const updateClockHands = async () => {
     await sleep(600)
     hourHandContainer.style.setProperty('--t', '0s')
     hourHandContainer.style.setProperty('--i', '0')
-    await sleep(1)
+    cssForceReflow(hourHandContainer)
     hourHandContainer.style.setProperty('--t', '0.5s')
   } else {
     hourHandContainer.style.setProperty('--i', `${hours.value + minutes.value / 60}`)
@@ -32,7 +36,7 @@ const updateClockHands = async () => {
     await sleep(600)
     minuteHandContainer.style.setProperty('--t', '0s')
     minuteHandContainer.style.setProperty('--i', '0')
-    await sleep(1)
+    cssForceReflow(minuteHandContainer)
     minuteHandContainer.style.setProperty('--t', '0.5s')
   } else {
     minuteHandContainer.style.setProperty('--i', `${minutes.value + seconds.value / 60}`)
@@ -43,7 +47,7 @@ const updateClockHands = async () => {
     await sleep(600)
     secondHandContainer.style.setProperty('--t', '0s')
     secondHandContainer.style.setProperty('--i', '0')
-    await sleep(1)
+    cssForceReflow(secondHandContainer)
     secondHandContainer.style.setProperty('--t', '0.5s')
   } else {
     secondHandContainer.style.setProperty('--i', `${seconds.value}`)
