@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Fixed
 - Fix the CSS reflow issue.
+- Fix the clock hands error when hours or minutes equal zero.
 
 ## [0.0.4] - 2022-05-15
 ### Added

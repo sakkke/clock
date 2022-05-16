@@ -20,7 +20,7 @@ const updateClockHands = async () => {
   const minuteHandContainer: HTMLElement = document.querySelector('.minute-hand-container')!
   const secondHandContainer: HTMLElement = document.querySelector('.second-hand-container')!
 
-  if (hours.value === 0) {
+  if (seconds.value === 0 && minutes.value === 0 && hours.value === 0) {
     hourHandContainer.style.setProperty('--i', '60')
     await sleep(600)
     hourHandContainer.style.setProperty('--t', '0s')
@@ -31,7 +31,7 @@ const updateClockHands = async () => {
     hourHandContainer.style.setProperty('--i', `${hours.value + minutes.value / 60}`)
   }
 
-  if (minutes.value === 0) {
+  if (seconds.value === 0 && minutes.value === 0) {
     minuteHandContainer.style.setProperty('--i', '60')
     await sleep(600)
     minuteHandContainer.style.setProperty('--t', '0s')
